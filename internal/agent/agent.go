@@ -2,16 +2,11 @@ package agent
 
 import (
 	"context"
-	"fmt"
-	"log"
-	"net"
-
+	"github.com/cbuschka/go-agent-poc/internal/local"
 	pb "github.com/cbuschka/go-agent-poc/internal/protocol/generated"
 	"google.golang.org/grpc"
-)
-
-const (
-	port = 50051
+	"google.golang.org/grpc/reflection"
+	"log"
 )
 
 type server struct {
@@ -23,13 +18,11 @@ func (s *server) Ping(ctx context.Context, in *pb.PingRequest) (*pb.PingReply, e
 	return &pb.PingReply{MagicKey: in.GetMagicKey()}, nil
 }
 
-func Run() error {
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", port))
-	if err != nil {
-		return err
-	}
+func runAgent() error {
+	lis := local.NewListener()
 	s := grpc.NewServer()
 	pb.RegisterAgentServer(s, &server{})
+	reflection.Register(s)
 	log.Printf("Agent listening at %v...", lis.Addr())
 	if err := s.Serve(lis); err != nil {
 		return err

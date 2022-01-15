@@ -11,9 +11,9 @@ build-agent:	generate-protocol
 	mkdir -p dist/
 	go build -o dist/agent cmd/agent/main.go
 
-build-master:	init
+build-master:	build-agent
 	@cd ${PROJECT_DIR}
-	mkdir -p dist/
+	#go generate internal/master/master.go
 	go build -o dist/master cmd/master/main.go
 
 generate-protocol:	init
@@ -34,3 +34,7 @@ init:
 clean:
 	@cd ${PROJECT_DIR}
 	rm -rf dist/
+
+test:	build
+	@cd ${PROJECT_DIR}
+	./dist/master
