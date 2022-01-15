@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/cbuschka/go-agent-poc/internal/protocol/generated";
+option go_package = "github.com/cbuschka/go-grpc-agent-poc/internal/protocol/generated";
 
 service Agent {
   rpc Ping (PingRequest) returns (PingReply) {}

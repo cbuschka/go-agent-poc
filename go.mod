@@ -1,4 +1,4 @@
-module github.com/cbuschka/go-agent-poc
+module github.com/cbuschka/go-grpc-agent-poc
 
 go 1.16
 

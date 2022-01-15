@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/cbuschka/go-agent-poc/internal/master"
+	"github.com/cbuschka/go-grpc-agent-poc/internal/master"
 	"os"
 )
 

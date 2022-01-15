@@ -1,4 +1,4 @@
-# go-agent-poc
+# go-grpc-agent-poc
 
 ### Master-agent communication via grpc example.
 

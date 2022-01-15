@@ -3,8 +3,8 @@ package master
 
 import (
 	"context"
-	pb "github.com/cbuschka/go-agent-poc/internal/protocol/generated"
-	"github.com/cbuschka/go-agent-poc/internal/remote"
+	pb "github.com/cbuschka/go-grpc-agent-poc/internal/protocol/generated"
+	"github.com/cbuschka/go-grpc-agent-poc/internal/remote"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"io/ioutil"

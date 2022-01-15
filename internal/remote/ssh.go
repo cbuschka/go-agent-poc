@@ -2,7 +2,7 @@ package remote
 
 import (
 	"fmt"
-	"github.com/cbuschka/go-agent-poc/internal/local"
+	"github.com/cbuschka/go-grpc-agent-poc/internal/local"
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
 	"golang.org/x/crypto/ssh/agent"

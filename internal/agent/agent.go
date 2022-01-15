@@ -2,8 +2,8 @@ package agent
 
 import (
 	"context"
-	"github.com/cbuschka/go-agent-poc/internal/local"
-	pb "github.com/cbuschka/go-agent-poc/internal/protocol/generated"
+	"github.com/cbuschka/go-grpc-agent-poc/internal/local"
+	pb "github.com/cbuschka/go-grpc-agent-poc/internal/protocol/generated"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"

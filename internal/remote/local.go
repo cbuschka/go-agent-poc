@@ -1,7 +1,7 @@
 package remote
 
 import (
-	"github.com/cbuschka/go-agent-poc/internal/local"
+	"github.com/cbuschka/go-grpc-agent-poc/internal/local"
 	"io/ioutil"
 	"net"
 	"os/exec"
