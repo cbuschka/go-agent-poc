@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/cbuschka/go-agent-poc/internal/agent"
+	"os"
+)
 
 func main() {
-	fmt.Printf("...agent\n")
+	err := agent.Run()
+	if err != nil {
+		fmt.Printf("failure: %s", err.Error())
+		os.Exit(1)
+	}
 }

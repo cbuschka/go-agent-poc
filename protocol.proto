@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/cbuschka/go-agent-poc/internal/protocol/generated";
+
+service Agent {
+  rpc Ping (PingRequest) returns (PingReply) {}
+}
+
+message PingRequest {
+  string magicKey = 1;
+}
+
+message PingReply {
+  string magicKey = 1;
+}
