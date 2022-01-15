@@ -18,6 +18,7 @@ build-master:	init
 
 generate-protocol:	init
 	@cd ${PROJECT_DIR}
+	@mkdir -p internal/protocol/generated/
 	PATH="$$PATH:$$(go env GOPATH)/bin" protoc \
 		--go_out=internal/protocol/generated/ --go_opt=paths=source_relative \
 		--go-grpc_out=internal/protocol/generated/ --go-grpc_opt=paths=source_relative protocol.proto
